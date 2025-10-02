@@ -21,22 +21,26 @@ public class EmployeeController {
     public Employee saveEmployee(@RequestBody Employee employee){
         return employeeService.saveEmployee(employee);
     }
-        /** Here, we are getting all employee*/
+
+    /* we are getting all employee*/
     @GetMapping
     public List<Employee> getAllEmployee(){
         return employeeService.getAllEmployee();
     }
-     /**here, we are geting one empployee*/
+
+    /* we are getting one employee*/
     @GetMapping("/{id}")
     public Optional<Employee> getEmployeeById(@PathVariable int id){
         return employeeService.getEmployeeById(id);
     }
-        /**here, we get gonna be updating an employee*/
+
+    /* we get going to update an employee*/
     @PutMapping("/{id}")
     public Employee updateEmployee(@PathVariable int id, @RequestBody Employee employee){
         return employeeService.updateEmployee(id,employee);
     }
-      /**Here, we are gonna be deleting an employee*/
+
+    /* we are going to delete an employee*/
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable int id){
         employeeService.deleteEmployee(id);
